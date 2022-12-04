@@ -1,0 +1,11 @@
+* * * * * /home/ec2-user/server_config/cron/update_docker_image.sh
+
+#  
+#*/5 * * * * ( sleep 45 ; /home/ec2-user/server_config/cron/clear_aws_creds.sh )
+
+# 45 second delay to avoid interfering with scheduled/running docker scripts
+*/30 * * * * ( sleep 45 ; /home/ec2-user/server_config/cron/reauth_aws_creds.sh )
+
+# following replaced with no-ip ddns daemon
+# */155555 * * * * /home/ec2-user/server_config/cron/update_ddns.sh
+
